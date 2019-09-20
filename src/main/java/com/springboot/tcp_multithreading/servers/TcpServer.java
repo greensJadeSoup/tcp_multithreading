@@ -2,6 +2,8 @@ package com.springboot.tcp_multithreading.servers;
 //tcp数据接收
 import com.springboot.tcp_multithreading.service.Impl.Log4jServiceImpl;
 import com.springboot.tcp_multithreading.service.Log4jService;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -60,8 +62,13 @@ public class TcpServer{
                     inputStream.read(bytes);
                     String data = new String(bytes);
                     //System.out.println(string);
+
                     //调用tcp解析，并存成日志
-                    log4jService.analysis(socket,data);
+                    String informationAll = log4jService.analysis(socket,data);
+                    Log log = LogFactory.getLog(TcpServer.class);
+
+                    System.out.println(informationAll);
+                    log.debug(informationAll);
 
                     //向客户端发送消息
                     //这一句必加，不然触发不了异常，导致继续接收已关闭客户端数据
