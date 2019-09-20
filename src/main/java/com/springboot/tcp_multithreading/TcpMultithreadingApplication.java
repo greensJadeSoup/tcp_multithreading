@@ -12,11 +12,9 @@ import java.io.IOException;
 @SpringBootApplication
 public class TcpMultithreadingApplication extends SpringBootServletInitializer {
     public static  void main(String[] args) throws IOException {
-        SpringApplication.run(TcpMultithreadingApplication.class, args);
-
         DynamicBuildFolder dynamicBuildFolder = new DynamicBuildFolder();
         DynamicBuildFolder.storage();
-
+        SpringApplication.run(TcpMultithreadingApplication.class, args);
         TcpServer tcpService = new TcpServer();
         tcpService.getServerDemo();//调用开启服务器
     }
