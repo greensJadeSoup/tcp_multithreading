@@ -9,7 +9,7 @@ public class DynamicBuildFolder {
     public static void storage(){
         //日期文件路径
         Date date = new Date();
-        String filePath="F:/workApp/IdeaProjectsWorkspace/Template/tcp_multithreading/logs"+"/"+new SimpleDateFormat("yyyy/MM/dd/").format(date);
+        String filePath=System.getProperty("user.dir")+"/logs"+"/"+new SimpleDateFormat("yyyy/MM/dd/").format(date);
         //如果不存在,创建文件夹
         File file = new File(filePath);
         if(!file.exists()){

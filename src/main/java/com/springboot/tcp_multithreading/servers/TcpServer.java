@@ -17,7 +17,7 @@ public class TcpServer{
         Socket socket = null;
         try {
             //建立服务器的Socket，并设定一个监听的端口PORT
-            serverSocket = new ServerSocket(6379);
+            serverSocket = new ServerSocket(8001);
             //由于需要进行循环监听，因此获取消息的操作应放在一个while大循环中
             while(true){
                 try {
@@ -67,7 +67,7 @@ public class TcpServer{
                     //这两句选一句必加，不然触发不了异常，导致继续接收已关闭客户端数据
                     //socket.sendUrgentData(0xFF);
                     outputStream.write(" ".getBytes());
-                    //System.out.println("OK");
+                    System.out.println("OK");
 
                 }
             } catch (Exception e) {

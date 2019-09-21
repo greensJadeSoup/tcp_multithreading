@@ -15,6 +15,7 @@ public class TcpMultithreadingApplication extends SpringBootServletInitializer {
         DynamicBuildFolder dynamicBuildFolder = new DynamicBuildFolder();
         DynamicBuildFolder.storage();
         SpringApplication.run(TcpMultithreadingApplication.class, args);
+        System.out.println("start now!");
         TcpServer tcpService = new TcpServer();
         tcpService.getServerDemo();//调用开启服务器
     }
