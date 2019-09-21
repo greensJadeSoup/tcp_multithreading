@@ -19,7 +19,6 @@ public class Log4jServiceImpl implements Log4jService {
 
         String information = String.valueOf(socket);
         String informationIP = information.substring(information.indexOf("/")+1,information.indexOf(",p"));
-        System.out.println("ip:"+informationIP+",data:"+data);
         log.info("ip:"+informationIP+",data:"+data);
     }
 }

@@ -2,7 +2,7 @@ package com.springboot.tcp_multithreading.servers;
 //tcp数据接收
 import com.springboot.tcp_multithreading.service.Impl.Log4jServiceImpl;
 import com.springboot.tcp_multithreading.service.Log4jService;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -10,7 +10,7 @@ import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-@Service
+@Component
 public class TcpServer{
     public void getServerDemo() throws IOException {
         ServerSocket serverSocket = null;
@@ -64,7 +64,7 @@ public class TcpServer{
                     log4jService.analysis(socket,data);
 
                     //向客户端发送消息
-                    //这一句必加，不然触发不了异常，导致继续接收已关闭客户端数据
+                    //这两句选一句必加，不然触发不了异常，导致继续接收已关闭客户端数据
                     //socket.sendUrgentData(0xFF);
                     outputStream.write(" ".getBytes());
                     //System.out.println("OK");
