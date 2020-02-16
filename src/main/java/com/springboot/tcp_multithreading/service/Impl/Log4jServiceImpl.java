@@ -13,8 +13,8 @@ import java.net.Socket;
 public class Log4jServiceImpl implements Log4jService {
     public void analysis(Socket socket,String data){
 
-        DynamicBuildFolder dynamicBuildFolder = new DynamicBuildFolder();
         DynamicBuildFolder.storage();
+
         Log log = LogFactory.getLog(Log4jServiceImpl.class);
 
         String information = String.valueOf(socket);

@@ -12,7 +12,6 @@ import java.io.IOException;
 @SpringBootApplication
 public class TcpMultithreadingApplication extends SpringBootServletInitializer {
     public static  void main(String[] args) throws IOException {
-        DynamicBuildFolder dynamicBuildFolder = new DynamicBuildFolder();
         DynamicBuildFolder.storage();
         SpringApplication.run(TcpMultithreadingApplication.class, args);
         System.out.println("start now!");
